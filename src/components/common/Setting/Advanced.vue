@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
-import { NButton, NInput, NSlider, useMessage } from 'naive-ui'
+import { NButton, NInput, NSlider, NSelect, useMessage } from 'naive-ui'
 import { useSettingStore } from '@/store'
 import type { SettingsState } from '@/store/modules/settings/helper'
 import { t } from '@/locales'
@@ -14,6 +14,22 @@ const systemMessage = ref(settingStore.systemMessage ?? '')
 const temperature = ref(settingStore.temperature ?? 0.5)
 
 const top_p = ref(settingStore.top_p ?? 1)
+
+const req_model = ref(settingStore.req_model ?? 'gpt-4')
+
+const options = [{
+  label: 'gpt-4',
+  value: 'gpt-4',
+}, {
+  label: 'gpt-4-turbo',
+  value: 'gpt-4-1106-preview',
+}, {
+  label: 'gpt-3.5-turbo',
+  value: 'gpt-3.5-turbo',
+}, {
+  label: 'gpt-3.5-turbo-16k',
+  value: 'gpt-3.5-turbo-16k',
+}]
 
 function updateSettings(options: Partial<SettingsState>) {
   settingStore.updateSetting(options)
@@ -58,6 +74,13 @@ function handleReset() {
         <NButton size="tiny" text type="primary" @click="updateSettings({ top_p })">
           {{ $t('common.save') }}
         </NButton>
+      </div>
+      <div class="flex items-center space-x-4">
+          <NSelect
+            v-model:value="req_model"
+            :options="options"
+            @update:value="updateSettings({ req_model })"
+          />
       </div>
       <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[120px]">&nbsp;</span>

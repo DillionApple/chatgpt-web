@@ -1,11 +1,13 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
 import { NAvatar } from 'naive-ui'
-import { useUserStore } from '@/store'
+import { useUserStore, useSettingStore } from '@/store'
 import defaultAvatar from '@/assets/avatar.jpg'
 import { isString } from '@/utils/is'
 
 const userStore = useUserStore()
+
+const settingStore = useSettingStore()
 
 const userInfo = computed(() => userStore.userInfo)
 </script>
@@ -29,6 +31,11 @@ const userInfo = computed(() => userStore.userInfo)
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap">
         {{ userInfo.name ?? 'ChenZhaoYu' }}
       </h2>
+      <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
+        <span
+          v-html="settingStore.req_model"
+        />
+      </p>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span
           v-if="isString(userInfo.description) && userInfo.description !== ''"

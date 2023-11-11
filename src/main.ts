@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import naive from 'naive-ui'
 import App from './App.vue'
 import { setupI18n } from './locales'
 import { setupAssets, setupScrollbarStyle } from './plugins'
@@ -7,6 +8,9 @@ import { setupRouter } from './router'
 
 async function bootstrap() {
   const app = createApp(App)
+
+  app.use(naive)
+
   setupAssets()
 
   setupScrollbarStyle()
