@@ -76,11 +76,14 @@ function handleReset() {
         </NButton>
       </div>
       <div class="flex items-center space-x-4">
+        <span class="flex-shrink-0 w-[120px]">Model </span>
+        <div class="flex-1">
           <NSelect
             v-model:value="req_model"
             :options="options"
             @update:value="updateSettings({ req_model })"
           />
+        </div>
       </div>
       <div class="flex items-center space-x-4">
         <span class="flex-shrink-0 w-[120px]">&nbsp;</span>
