@@ -29,6 +29,12 @@ const options = [{
 }, {
   label: 'gpt-3.5-turbo-16k',
   value: 'gpt-3.5-turbo-16k',
+}, {
+  label: 'deepseek-chat',
+  value: 'deepseek-chat',
+}, {
+  label: 'deepseek-code',
+  value: 'deepseek-code',
 }]
 
 function updateSettings(options: Partial<SettingsState>) {
