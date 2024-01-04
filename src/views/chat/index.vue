@@ -12,7 +12,7 @@ import { useUsingContext } from './hooks/useUsingContext'
 import HeaderComponent from './components/Header/index.vue'
 import { HoverButton, SvgIcon } from '@/components/common'
 import { useBasicLayout } from '@/hooks/useBasicLayout'
-import { useChatStore, usePromptStore } from '@/store'
+import { useChatStore, usePromptStore, useSettingStore } from '@/store'
 import { fetchChatAPIProcess } from '@/api'
 import { t } from '@/locales'
 
@@ -43,6 +43,8 @@ const inputRef = ref<Ref | null>(null)
 // 添加PromptStore
 const promptStore = usePromptStore()
 
+const settingStore = useSettingStore()
+
 // 使用storeToRefs，保证store修改后，联想部分能够重新渲染
 const { promptList: promptTemplate } = storeToRefs<any>(promptStore)
 
@@ -53,6 +55,11 @@ dataSources.value.forEach((item, index) => {
 })
 
 function handleSubmit() {
+  settingStore.updateSetting(
+    { 
+      interacted: true,
+      last_active_ts_ms: Date.now()
+    })
   onConversation()
 }
 

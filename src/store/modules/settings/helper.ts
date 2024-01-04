@@ -7,14 +7,18 @@ export interface SettingsState {
   temperature: number
   top_p: number
   req_model: string
+  last_active_ts_ms: number
+  interacted: boolean
 }
 
 export function defaultSetting(): SettingsState {
   return {
-    systemMessage: 'You are ChatGPT, a large language model trained by OpenAI. Follow the user\'s instructions carefully. Respond using markdown.',
+    systemMessage: 'You are a helpful assistant. Follow the user\'s instructions carefully. Respond using markdown.',
     temperature: 0.8,
     top_p: 1,
     req_model: 'gpt-4',
+    last_active_ts_ms: Date.now(),
+    interacted: false,
   }
 }
 
