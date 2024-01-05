@@ -62,13 +62,13 @@ function check_active() {
   const interacted = settingStore.interacted
   const last_active_ts_ms = settingStore.last_active_ts_ms
   const interval = Date.now() - last_active_ts_ms
-  if (interval > 6 * 3600 * 1000 && interacted) {
+  if (interval > 1 * 3600 * 1000 && interacted) {
     handleAdd()
   }
 }
 
 onMounted(() => {
-  setInterval(check_active, 60000)
+  setInterval(check_active, 1000)
 })
 
 </script>
