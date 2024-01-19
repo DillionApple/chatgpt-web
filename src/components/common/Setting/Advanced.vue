@@ -17,7 +17,14 @@ const top_p = ref(settingStore.top_p ?? 1)
 
 const req_model = ref(settingStore.req_model ?? 'gpt-4')
 
-const options = [{
+const options = [
+{
+  label: 'deepseek-chat',
+  value: 'deepseek-chat',
+}, {
+  label: 'deepseek-coder',
+  value: 'deepseek-coder',
+}, {
   label: 'gpt-4',
   value: 'gpt-4',
 }, {
@@ -29,12 +36,6 @@ const options = [{
 }, {
   label: 'gpt-3.5-turbo-16k',
   value: 'gpt-3.5-turbo-16k',
-}, {
-  label: 'deepseek-chat',
-  value: 'deepseek-chat',
-}, {
-  label: 'deepseek-code',
-  value: 'deepseek-code',
 }]
 
 function updateSettings(options: Partial<SettingsState>) {
