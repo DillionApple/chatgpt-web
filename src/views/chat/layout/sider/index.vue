@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { CSSProperties } from 'vue'
-import { computed, ref, watch, onMounted } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { NButton, NLayoutSider } from 'naive-ui'
 import List from './List.vue'
 import Footer from './Footer.vue'
@@ -58,6 +58,7 @@ watch(
   },
 )
 
+/*
 function check_active() {
   const interacted = settingStore.interacted
   const last_active_ts_ms = settingStore.last_active_ts_ms
@@ -70,6 +71,7 @@ function check_active() {
 onMounted(() => {
   setInterval(check_active, 1000)
 })
+*/
 
 </script>
 
