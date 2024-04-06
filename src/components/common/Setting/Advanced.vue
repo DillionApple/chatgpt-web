@@ -39,6 +39,12 @@ const options = [
 }, {
   label: 'gpt-3.5-turbo-16k',
   value: 'gpt-3.5-turbo-16k',
+}, {
+  label: 'claude-3-sonnet',
+  value: 'claude-3-sonnet-20240229',
+}, {
+  label: 'claude-3-opus',
+  value: 'claude-3-opus-20240229',
 }]
 
 function updateSettings(options: Partial<SettingsState>) {
