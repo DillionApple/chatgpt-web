@@ -28,6 +28,9 @@ const options = [
   label: 'gpt-4',
   value: 'gpt-4',
 }, {
+  label: 'gpt-4-turbo (2024-04-09)',
+  value: 'gpt-4-turbo-2024-04-09',
+}, {
   label: 'gpt-4-turbo (1106-preview)',
   value: 'gpt-4-1106-preview',
 }, {
