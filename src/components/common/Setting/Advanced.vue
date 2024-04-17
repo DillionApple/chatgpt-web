@@ -15,7 +15,7 @@ const temperature = ref(settingStore.temperature ?? 0.5)
 
 const top_p = ref(settingStore.top_p ?? 1)
 
-const req_model = ref(settingStore.req_model ?? 'gpt-4')
+const req_model = ref(settingStore.req_model ?? 'azure-gpt-4-0125-preview')
 
 const options = [
 {
@@ -26,22 +26,16 @@ const options = [
   value: 'deepseek-coder',
 }, {
   label: 'gpt-4',
-  value: 'gpt-4',
+  value: 'azure-gpt-4',
 }, {
   label: 'gpt-4-turbo (2024-04-09)',
   value: 'gpt-4-turbo-2024-04-09',
 }, {
-  label: 'gpt-4-turbo (1106-preview)',
-  value: 'gpt-4-1106-preview',
-}, {
   label: 'gpt-4-turbo (0125-preview)',
-  value: 'gpt-4-0125-preview',
+  value: 'azure-gpt-4-0125-preview',
 }, {
-  label: 'gpt-3.5-turbo',
-  value: 'gpt-3.5-turbo',
-}, {
-  label: 'gpt-3.5-turbo-16k',
-  value: 'gpt-3.5-turbo-16k',
+  label: 'gpt-3.5-turbo (2024-01-25)',
+  value: 'azure-gpt-35-turbo-0125',
 }, {
   label: 'claude-3-sonnet',
   value: 'claude-3-sonnet-20240229',
