@@ -16,7 +16,7 @@ export function defaultSetting(): SettingsState {
     systemMessage: 'You are a helpful assistant. Follow the user\'s instructions carefully. Respond using markdown.',
     temperature: 0.8,
     top_p: 1,
-    req_model: 'azure-gpt-4-0125-preview',
+    req_model: 'deepseek-chat',
     last_active_ts_ms: Date.now(),
     interacted: false,
   }
