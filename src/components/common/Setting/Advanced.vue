@@ -19,7 +19,7 @@ const req_model = ref(settingStore.req_model ?? 'azure-gpt-4-0125-preview')
 
 const options = [
 {
-  label: 'deepseek-chat',
+  label: 'deepseek-chat (DeepSeek-V2)',
   value: 'deepseek-chat',
 }, {
   label: 'deepseek-coder',
@@ -29,7 +29,7 @@ const options = [
   value: 'azure-gpt-4',
 }, {
   label: 'gpt-4-turbo (2024-04-09)',
-  value: 'gpt-4-turbo-2024-04-09',
+  value: 'gpt-4-turbo-2024-04-09-high-five-ai',
 }, {
   label: 'gpt-4-turbo (0125-preview)',
   value: 'azure-gpt-4-0125-preview',
