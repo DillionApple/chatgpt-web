@@ -28,11 +28,11 @@ const options = [
   label: 'gpt-4',
   value: 'azure-gpt-4',
 }, {
+  label: 'gpt-4o',
+  value: 'gpt-4o-2024-05-13-high-five-ai',
+}, {
   label: 'gpt-4-turbo (2024-04-09)',
   value: 'gpt-4-turbo-2024-04-09-high-five-ai',
-}, {
-  label: 'gpt-4-turbo (0125-preview)',
-  value: 'azure-gpt-4-0125-preview',
 }, {
   label: 'gpt-3.5-turbo (2024-01-25)',
   value: 'azure-gpt-35-turbo-0125',
